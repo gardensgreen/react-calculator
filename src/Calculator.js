@@ -48,20 +48,21 @@ export default class Calculator extends Component {
         });
     };
     render() {
+        const { num1, num2, result } = this.state;
         return (
             <div>
-                <h1>Result: {this.state.result}</h1>
+                <h1>Result: {result}</h1>
                 <input
                     type="number"
                     placeholder="first number"
                     onChange={this.handleFirstNum}
-                    value={this.state.num1}
+                    value={num1}
                 ></input>
                 <input
                     type="number"
                     placeholder="Second number"
                     onChange={this.handleSecondNum}
-                    value={this.state.num2}
+                    value={num2}
                 ></input>
                 <button onClick={this.add}>+</button>
                 <button onClick={this.subtract}>-</button>
