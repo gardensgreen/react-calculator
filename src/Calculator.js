@@ -39,6 +39,14 @@ export default class Calculator extends Component {
             result: result,
         });
     };
+
+    clear = (e) => {
+        this.setState({
+            result: 0,
+            num1: "",
+            num2: "",
+        });
+    };
     render() {
         return (
             <div>
@@ -59,6 +67,9 @@ export default class Calculator extends Component {
                 <button onClick={this.subtract}>-</button>
                 <button onClick={this.multiply}>*</button>
                 <button onClick={this.divide}>/</button>
+                <div>
+                    <button onClick={this.clear}>Clear</button>
+                </div>
             </div>
         );
     }
