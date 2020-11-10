@@ -15,6 +15,30 @@ export default class Calculator extends Component {
         let parsed = parseInt(e.target.value, 10);
         this.setState({ num2: parsed });
     };
+    add = (e) => {
+        let result = this.state.num1 + this.state.num2;
+        this.setState({
+            result: result,
+        });
+    };
+    subtract = (e) => {
+        let result = this.state.num1 - this.state.num2;
+        this.setState({
+            result: result,
+        });
+    };
+    multiply = (e) => {
+        let result = this.state.num1 * this.state.num2;
+        this.setState({
+            result: result,
+        });
+    };
+    divide = (e) => {
+        let result = this.state.num1 / this.state.num2;
+        this.setState({
+            result: result,
+        });
+    };
     render() {
         return (
             <div>
@@ -31,6 +55,10 @@ export default class Calculator extends Component {
                     onChange={this.handleSecondNum}
                     value={this.state.num2}
                 ></input>
+                <button onClick={this.add}>+</button>
+                <button onClick={this.subtract}>-</button>
+                <button onClick={this.multiply}>*</button>
+                <button onClick={this.divide}>/</button>
             </div>
         );
     }
